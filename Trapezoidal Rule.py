@@ -30,4 +30,9 @@ sub_interval = int(input("Enter number of sub intervals: "))
 
 # Call trapezoidal() method and get result
 result = trapezoidal(lower_limit, upper_limit, sub_interval)
-print("Integration result by Trapezoidal method is: " ,round(result,6))
+
+# Print result
+print("Integration result by Trapezoidal method is: " , result)
+
+# Close console
+input("Press any key to close")
