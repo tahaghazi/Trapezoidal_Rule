@@ -11,11 +11,13 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
         }
         .container {
     max-width: 90%;
 }
+        .footer{
+            margin: auto;
+        }
     </style>
 </head>
 <body class="overflow-hidden">
@@ -40,7 +42,7 @@
                 <input name="sub_interval" type="number" class="form-control fs-5" id="sub_interval" value="7" max="1000000">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div><button type="submit" class="btn btn-primary">Submit</button></div>
         </form>
         <div class="col-12">
             <p class="m-50 text-center mt-5 fs-4">f(x)=  1 / (1 + x^2) </p>
@@ -49,7 +51,7 @@
     </div>
 </div>
 
-<div class="container mb-0">
+<div class="container footer">
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
             <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
