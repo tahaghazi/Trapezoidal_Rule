@@ -6,42 +6,33 @@ def f(x):
 
 
 # Implementing trapezoidal method
-def trapezoidal(a, b, n):
-    """
-    a ----> lower limit of integration
-    b ----> upper limit of integration
-    n ----> number of sub intervals
-    """
-
+def trapezoidal(x0, xn, n):
     # calculating step size
-    h = (b - a) / n
+    h = (xn - x0) / n
 
     # Finding sum
-    fa_and_fb = (f(a) + f(b)) / 2
+    integration = f(x0) + f(xn)
 
-    sigma_fk = 0
-    # f(a+1*h) + f(a+2*h) +f(a+3*h) +...
     for i in range(1, n):
-        fk = f(a + i * h)
-        sigma_fk +=  fk
+        k = x0 + i * h
+        integration = integration + 2 * f(k)
 
     # Finding final integration value
-    result = h * (fa_and_fb + sigma_fk )
+    integration = integration * h / 2
 
-    return result
+    return integration
 
 
 # Input section
-a = float(input("Enter lower limit of integration: "))
-b = float(input("Enter upper limit of integration: "))
-n = int(input("Enter number of sub intervals: "))
+lower_limit = float(input("Enter lower limit of integration: "))
+upper_limit = float(input("Enter upper limit of integration: "))
+sub_interval = int(input("Enter number of sub intervals: "))
 
 # Call trapezoidal() method and get result
-integration = trapezoidal(a, b, n)
+result = trapezoidal(lower_limit, upper_limit, sub_interval)
 
 # Print result
-print("Integration result by Trapezoidal method is: " , integration)
+print("Integration result by Trapezoidal method is: " , result)
 
 # Close console
 input("Press any key to close")
-

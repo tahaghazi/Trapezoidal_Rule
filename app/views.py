@@ -9,15 +9,15 @@ def f(x):
 
 
 # Implementing trapezoidal method
-def trapezoidal(a, b, n):
+def trapezoidal(x0, xn, n):
     # calculating step size
-    h = (b - a) / n
+    h = (xn - x0) / n
 
     # Finding sum
-    integration = f(a) + f(b)
+    integration = f(x0) + f(xn)
 
     for i in range(1, n):
-        k = a + i * h
+        k = x0 + i * h
         integration = integration + 2 * f(k)
 
     # Finding final integration value
